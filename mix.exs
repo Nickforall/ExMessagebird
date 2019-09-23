@@ -23,7 +23,8 @@ defmodule ExMessagebird.MixProject do
   defp deps do
     [
       {:httpoison, "~> 1.5"},
-      {:poison, "~> 4.0", only: [:dev, :test]}
+      {:poison, "~> 4.0", only: [:dev, :test]},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 
