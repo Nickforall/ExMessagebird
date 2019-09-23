@@ -1,0 +1,29 @@
+{
+  "id": "e8077d803532c0b5937c639b60216938",
+  "href": "https://rest.messagebird.com/messages/e8077d803532c0b5937c639b60216938",
+  "direction": "mt",
+  "type": "sms",
+  "originator": "MessageBird",
+  "body": "The message to be sent",
+  "reference": "the-client-reference",
+  "validity": null,
+  "gateway": 240,
+  "typeDetails": {},
+  "datacoding": "plain",
+  "mclass": 1,
+  "scheduledDatetime": null,
+  "createdDatetime": "2016-04-29T09:42:26+00:00",
+  "recipients": {
+    "totalCount": 1,
+    "totalSentCount": 1,
+    "totalDeliveredCount": 0,
+    "totalDeliveryFailedCount": 0,
+    "items": [
+      {
+        "recipient": 31612345678,
+        "status": "sent",
+        "statusDatetime": "2016-04-29T09:42:26+00:00"
+      }
+    ]
+  }
+}
