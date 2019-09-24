@@ -17,11 +17,19 @@ defmodule ExMessagebird.SMS do
              body: message,
              originator: ExMessagebird.originator()
            }),
+         {:ok, body} <- parse_json_body(body),
          {:ok, response} <- ExMessagebird.SMS.Message.from_response(body) do
       {:ok, response}
     else
       {:error, :invalid_response} -> {:error, "Invalid response returned from Messagebird API"}
       error -> error
+    end
+  end
+
+  defp parse_json_body(body) do
+    case Poison.decode(body) do
+      {:ok, map} -> {:ok, map}
+      {:error, _} -> {:error, :invalid_response}
     end
   end
 end
