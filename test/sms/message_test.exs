@@ -6,7 +6,7 @@ defmodule ExMessagebird.SMS.MessageTest do
     setup do
       data =
         File.read!("test/support/message.json")
-        |> Poison.decode!()
+        |> Jason.decode!()
 
       %{data: data}
     end

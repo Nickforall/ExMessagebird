@@ -27,7 +27,7 @@ defmodule ExMessagebird.SMS do
   end
 
   defp parse_json_body(body) do
-    case Poison.decode(body) do
+    case Jason.decode(body) do
       {:ok, map} -> {:ok, map}
       {:error, _} -> {:error, :invalid_response}
     end

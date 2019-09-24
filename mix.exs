@@ -4,7 +4,7 @@ defmodule ExMessagebird.MixProject do
   def project do
     [
       app: :ex_messagebird,
-      version: "0.1.0-pre-release.2",
+      version: "0.1.0-pre-release.3",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -23,7 +23,7 @@ defmodule ExMessagebird.MixProject do
   defp deps do
     [
       {:httpoison, "~> 1.5"},
-      {:poison, "~> 4.0", only: [:dev, :test]},
+      {:jason, "~> 1.1"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
