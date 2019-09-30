@@ -4,7 +4,7 @@ defmodule ExMessagebird.MixProject do
   def project do
     [
       app: :ex_messagebird,
-      version: "0.1.0-pre-release.3",
+      version: "0.1.0-pre-release.4",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
