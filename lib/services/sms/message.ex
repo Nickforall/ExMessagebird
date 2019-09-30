@@ -16,6 +16,10 @@ defmodule ExMessagebird.SMS.Message do
 
   alias __MODULE__
 
+  @type t :: %Message{
+          id: String.t()
+        }
+
   @doc """
   Generates a message struct from the json object returned by the programmable SMS API
   """
