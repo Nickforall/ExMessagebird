@@ -3,6 +3,8 @@ defmodule ExMessagebird do
   Documentation for ExMessagebird.
   """
 
+  use Application
+
   @doc """
   Returns the url of the MessageBird API server
   """
@@ -21,5 +23,19 @@ defmodule ExMessagebird do
     end
 
     originator
+  end
+
+  def start(_type, _args) do
+    import Supervisor.Spec, warn: false
+
+    children = [
+      worker(
+        ExMessagebird.Backend.InMemory.Server,
+        [[], [name: ExMessagebird.Backend.InMemory.Server]]
+      )
+    ]
+
+    opts = [strategy: :one_for_one, name: ExMessagebird.Supervisor]
+    Supervisor.start_link(children, opts)
   end
 end
