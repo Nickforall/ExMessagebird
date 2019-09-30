@@ -1,4 +1,6 @@
 defmodule ExMessagebird.Backend.InMemory.Server do
+  @moduledoc false
+
   use GenServer
 
   def start_link(init, options \\ []) do

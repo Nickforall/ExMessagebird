@@ -1,6 +1,6 @@
 defmodule ExMessagebird.Backend.Behaviour do
   @moduledoc """
-  Implement this behaviour for custom backends
+  Implement this behaviour for custom backends.
   """
 
   @type send_message_options :: %{

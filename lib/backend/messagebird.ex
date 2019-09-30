@@ -1,4 +1,8 @@
 defmodule ExMessagebird.Backend.Messagebird do
+  @moduledoc """
+  The default backend that calls the messagebird API
+  """
+
   @behaviour ExMessagebird.Backend.Behaviour
 
   def token do
