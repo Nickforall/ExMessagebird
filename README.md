@@ -12,16 +12,16 @@ Please don't use, this is in development still but published on github because a
 ```elixir
 config :ex_messagebird,
   token: "YOUR API TOKEN",
-  originator: "316xxxxxxx"
+  originator: "ExMessagebird"
 ```
 
 ## Testing
 
-You can use the InMemory storage to list the options sent to `send_message`.
-Additionaly you can implement a `Mox` Mock for the `ExMessagebird.Backend.Behaviour` behavior
+You can use the [InMemory](https://hexdocs.pm/ex_messagebird/ExMessagebird.Backend.InMemory.html) backend to list the payloads sent to `send_message`.
+Additionaly you can implement a `Mox` Mock with the `ExMessagebird.Backend.Behaviour` behavior.
 
 ```elixir
 config :ex_messagebird,
   backend: ExMessagebird.Backend.InMemory,
-  originator: "316xxxxxxx"
+  originator: "ExMessagebird"
 ```
