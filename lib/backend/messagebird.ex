@@ -33,7 +33,7 @@ defmodule ExMessagebird.Backend.Messagebird do
     end
   end
 
-  defp parse_json_body(body) do
+  defp parse_json_body(%HTTPoison.Response{body: body}) do
     case Jason.decode(body) do
       {:ok, map} -> {:ok, map}
       _ -> {:error, :invalid_response}
