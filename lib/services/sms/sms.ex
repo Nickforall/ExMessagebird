@@ -28,7 +28,8 @@ defmodule ExMessagebird.SMS do
     options = Map.merge(defaults, options)
     backend = Map.get(options, :backend, @backend)
 
-    with {:ok, response} <- backend.send_message(options) do
+    with {:ok, response} <- backend.send_message(options),
+         {:ok, response} <- ExMessagebird.Message.from_response(response) do
       {:ok, response}
     else
       {:error, :invalid_response} -> {:error, "Invalid response returned from Messagebird API"}
