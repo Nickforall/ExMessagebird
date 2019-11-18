@@ -1,0 +1,14 @@
+{
+  "errors": [
+    {
+      "code": 2,
+      "description": "Request not allowed (incorrect access_key)",
+      "parameter": "access_key"
+    },
+    {
+      "code": 99,
+      "description": "Request not allowed (incorrect access_key)",
+      "parameter": "access_key"
+    }
+  ]
+}
