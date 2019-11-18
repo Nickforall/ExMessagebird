@@ -46,7 +46,24 @@ defmodule ExMessagebird.Backend.Messagebird do
 
   def send_message(options) do
     case post("messages", options) do
-      {:ok, response} -> ExMessagebird.SMS.Message.from_response(response)
+      {:ok, response} -> from_response(response)
+      error -> error
+    end
+  end
+
+  defp from_response(response) do
+    case ExMessagebird.SMS.Message.from_response(response) do
+      {:ok, response} ->
+        {:ok, response}
+
+      {:error, _} ->
+        from_error_response(response)
+    end
+  end
+
+  defp from_error_response(response) do
+    case ExMessagebird.Error.from_response(response) do
+      {:ok, response} -> {:error, response}
       error -> error
     end
   end
