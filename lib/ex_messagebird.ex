@@ -7,6 +7,11 @@ defmodule ExMessagebird do
 
   @doc """
   Returns the url of the MessageBird API server
+
+  ## Example
+
+    iex> ExMessagebird.base_url()
+    "https://rest.messagebird.com/"
   """
   def base_url do
     Application.get_env(:ex_messagebird, :url, "https://rest.messagebird.com/")
